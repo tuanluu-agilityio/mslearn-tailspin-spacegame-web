@@ -45,10 +45,12 @@ steps:
 - template: templates/build.yml
   parameters:
     buildConfiguration: 'Debug'
+    sourcesDirectory: $(Build.SourcesDirectory)
 
 - template: templates/build.yml
   parameters:
     buildConfiguration: 'Release'
+    sourcesDirectory: $(Build.SourcesDirectory)
     
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
